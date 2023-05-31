@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 class User {
@@ -17,8 +16,8 @@ class User {
         return username;
     }
 
-    public void setUsername(String username){
-        this.username=username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -36,7 +35,7 @@ public class SILab2 {
         if (user == null || user.getPassword() == null || user.getEmail() == null) {
             throw new RuntimeException("Mandatory information missing!");
         }
-        
+
         if (user.getUsername() == null) {
             user.setUsername(user.getEmail());
         }
@@ -58,21 +57,5 @@ public class SILab2 {
         }
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        // Пример на користење на функцијата
-
-        // Креирање на листа со постоечки корисници
-        List<User> users = new ArrayList<>();
-        users.add(new User("user1", "password1", "user1@example.com"));
-        users.add(new User("user2", "password2", "user2@example.com"));
-
-        // Креирање на нов корисник
-        User newUser = new User("user3", "password3", "user3@example.com");
-
-        // Повик на функцијата и прикажување на резултатот
-        boolean isValid = function(newUser, users);
-        System.out.println("Is user valid? " + isValid);
     }
 }
